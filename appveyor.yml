@@ -16,3 +16,11 @@ clone_script:
 build_script:
 - cmd: powershell .\build.ps1
 - sh: sudo build.sh
+
+for:
+-
+  matrix:
+    except:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
+  skip_commits:
+    message: [Ubuntu]
