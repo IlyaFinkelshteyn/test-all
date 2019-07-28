@@ -15,7 +15,7 @@ clone_script:
 
 build_script:
 - cmd: powershell .\build.ps1
-- sh: sudo build.sh
+- sh: bash ./build.sh
 
 for:
 -
@@ -24,3 +24,10 @@ for:
       - APPVEYOR_BUILD_WORKER_IMAGE: Ubuntu
   skip_commits:
     message: /ubuntu-only/
+
+-
+  matrix:
+    except:
+      - APPVEYOR_BUILD_WORKER_IMAGE: Visual Studio 2017
+  skip_commits:
+    message: /vs2017-only/
