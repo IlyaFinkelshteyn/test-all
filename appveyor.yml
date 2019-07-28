@@ -12,6 +12,7 @@ environment:
     
 clone_script:
 - cmd: git clone https://github.com/IlyaFinkelshteyn/%PROJECT_NAME% %APPVEYOR_BUILD_FOLDER%
+- sh: git clone https://github.com/IlyaFinkelshteyn/$PROJECT_NAME $APPVEYOR_BUILD_FOLDER
 
 build_script:
 - cmd: powershell .\build.ps1
